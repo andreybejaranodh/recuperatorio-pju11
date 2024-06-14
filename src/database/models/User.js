@@ -4,7 +4,7 @@
  * @param {import('sequelize').DataTypes} dataTypes
  *
  */
-//Role Model with Sequelize
+//User Model con Sequelize
 module.exports = (sequelize, dataTypes) => {
   const alias = 'User';
   const cols = {
