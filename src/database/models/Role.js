@@ -6,7 +6,7 @@
  */
 //Role Model with Sequelize
 module.exports = (sequelize, dataTypes) => {
-  const alias = 'Roles';
+  const alias = 'Role';
   const cols = {
     id: {
       type: dataTypes.INTEGER,
@@ -14,7 +14,6 @@ module.exports = (sequelize, dataTypes) => {
     },
     name: {
       type: dataTypes.STRING(255),
-      defaultValue: null,
     },
   }
   const config = {
