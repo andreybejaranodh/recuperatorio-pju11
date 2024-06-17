@@ -4,7 +4,7 @@ const roleController = require('../../controllers/api/roleController');
 
 const router = express.Router();
 
-// router.???('/', roleController.index);
-// router.???('/', roleController.create);
+router.get('/', roleController.index);
+router.post('/', roleController.create);
 
 module.exports = router;
