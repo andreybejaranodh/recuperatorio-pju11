@@ -4,7 +4,7 @@ const userController = require('../../controllers/api/userController');
 
 const router = express.Router();
 
-// router.???('/', userController.index);
-// router.???('/', userController.create);
+router.get('/', userController.index);
+router.post('/', userController.create);
 
 module.exports = router;
