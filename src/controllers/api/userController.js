@@ -4,7 +4,9 @@ const controller = {
     async index(req, res) {
         // Controlador para retornar todos los usuarios
         try {
-            const users = await db.User.findAll();
+            const users = await db.User.findAll({
+                include: [{ association: 'role' }]
+            });
             res.status(200).json(users);
         } catch (error) {
             res.status(500).json({ error: error.message });
