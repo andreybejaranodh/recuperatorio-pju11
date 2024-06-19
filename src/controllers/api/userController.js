@@ -2,10 +2,24 @@ const db = require('../../database/models');
 
 const controller = {
     async index(req, res) {
-        // Crear controlador para retornar todos los usuarios
+        // Controlador para retornar todos los usuarios
+        try {
+            const users = await db.User.findAll({
+                include: [{ association: 'role' }]
+            });
+            res.status(200).json(users);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     },
     async create (req, res) {
-        // Crear controllador para crear un nuevo usuario
+        // Controllador para crear un nuevo usuario
+        try {
+            const user = await db.User.create(req.body);
+            res.status(201).json(user);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     }
 }
 
